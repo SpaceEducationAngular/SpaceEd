@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from '../signup/signup/signup.component';
+import { SignupComponent } from '../signup/signup.component';
 import { SearchComponent } from '../search/search.component';
 import { ProfilUserComponent } from '../profil-user/profil-user.component';
 import { PostLectureComponent } from '../post-lecture/post-lecture.component';
