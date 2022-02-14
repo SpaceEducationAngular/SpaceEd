@@ -4,7 +4,7 @@ import {RouterModule} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from '../signup/signup/signup.component';
+import { SignupComponent } from '../signup/signup.component';
 import { SearchComponent } from '../search/search.component';
 import { ProfilUserComponent } from '../profil-user/profil-user.component';
 import { PostLectureComponent } from '../post-lecture/post-lecture.component';
@@ -41,15 +41,20 @@ import { AboutUsComponent } from '../about-us/about-us.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path:'',component:},
-      {path:'',component:},
-      {path:'',component:},
-      {path:'',component:},
-      {path:'',component:},
-      {path:'',component:},
-      {path:'',component:},
-      {path:'',component:},
-
+      {path:'signup',component:SignupComponent},
+      {path:'search',component:SearchComponent},
+      {path:'profile-user',component:ProfilUserComponent},
+      {path:'post-lecture',component:PostLectureComponent},
+      {path:'payment',component:PaymentComponent},
+      {path:'navbar',component:NavbarComponent},
+      {path:'login',component:LoginComponent},
+      {path:'lectures',component:LecturesComponent},
+      {path:'feed',component:FeedComponent},
+      {path:'dashboard',component:DashboardComponent},
+      {path:'booking',component:BookingComponent},
+      {path:'add-type',component:AddTypeComponent},
+      {path:'add-teacher',component:AddTeacherComponent},
+      {path:'about-us',component:AboutUsComponent}
     ])
   ],
   providers: [],
