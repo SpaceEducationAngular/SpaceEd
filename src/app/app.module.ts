@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {RouterModule} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,7 +39,23 @@ import { AboutUsComponent } from '../about-us/about-us.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([
+      {path:'signup',component:SignupComponent},
+      {path:'search',component:SearchComponent},
+      {path:'profile-user',component:ProfilUserComponent},
+      {path:'post-lecture',component:PostLectureComponent},
+      {path:'payment',component:PaymentComponent},
+      {path:'navbar',component:NavbarComponent},
+      {path:'login',component:LoginComponent},
+      {path:'lectures',component:LecturesComponent},
+      {path:'feed',component:FeedComponent},
+      {path:'dashboard',component:DashboardComponent},
+      {path:'booking',component:BookingComponent},
+      {path:'add-type',component:AddTypeComponent},
+      {path:'add-teacher',component:AddTeacherComponent},
+      {path:'about-us',component:AboutUsComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
