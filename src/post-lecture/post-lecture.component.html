@@ -1,1 +1,10 @@
 <p>post-lecture works!</p>
+<form #postsForm="ngForm" (ngSubmit)="getPostFormData(postsForm.value)">
+    <p>title:</p>
+    <input type="text" name="title">
+    <p>description:</p>
+    <input type="text" name="description">
+    <p>categorie:</p>
+    <input type="text" name="categorie">
+    <button>add</button>
+</form>

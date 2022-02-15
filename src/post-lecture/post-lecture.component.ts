@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './post-lecture.component.html',
   styleUrls: ['./post-lecture.component.css']
 })
-export class PostLectureComponent implements OnInit {
+export class PostLectureComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  getPostFormData(){
+    
   }
 
 }
