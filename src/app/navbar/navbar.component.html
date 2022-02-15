@@ -1,0 +1,54 @@
+<div>
+  <ul>
+    <div className="centerReste">
+      <li>
+         <img src="https://media.discordapp.net/attachments/940527646540972052/941874057379455006/spaceeducationblanc.png?width=1313&height=671" alt="" class="img"> 
+      </li> 
+       <li>
+        <a routerLink="/signup" routerLinkActive="active" > Home  </a>
+      </li> 
+      <li>
+        <a routerLink="/about-us" routerLinkActive="active">  AboutUs  </a>
+      </li>
+      <li>
+        <a routerLink="/booking" routerLinkActive="active" >Booked</a>
+      </li>
+      <li>
+        <a routerLink="/lectures" routerLinkActive="active" >  Lectures  </a>
+      </li>
+      <li  >
+        <a *ngIf="id_category!==0 && id_category !==3"  routerLink="/post-lecture" routerLinkActive="active"> Post  </a>
+      </li>
+      
+      <li>
+        <a> <router-link to="/Payment"> Payment  </a>
+      </li> 
+      <li >
+        <a *ngIf="id_category===1" routerLink="/add-teacher" routerLinkActive="active">List User  </a>
+      </li>
+      <li>
+        <a *ngIf="id_category===1" routerLink="/add-type" routerLinkActive="active">Add Type</a>
+      </li>
+    </div>
+    <div className="center">
+      <li>
+        <a *ngIf="id_category===0" routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+      <li>
+        <a *ngIf="id_category===0" routerLink="/signup" routerLinkActive="active">Signup</a>
+      </li>
+      <li>
+        <a *ngIf="id_category!==0" routerLink="/profil-user" routerLinkActive="active">Profil</a>
+      </li>
+      <li>
+        <a *ngIf="id_category!==0" routerLink="/login" routerLinkActive="active">Logout</a>
+      </li>
+    </div>
+  </ul>
+</div>
+
+
+
+
+
+  <!-- routerLink="/login" routerLinkActive="active" -->
