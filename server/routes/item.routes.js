@@ -29,5 +29,4 @@ router.post("/booking", itemController.insertBooking)
 router.get("/booking/:id", itemController.selectBooking)
 
 
-
 module.exports = router;

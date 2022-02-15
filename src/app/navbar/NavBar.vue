@@ -96,7 +96,7 @@ export default {
 /* body {
   font-size: 28px;
 } */
-.img{
+/* .img{
   width: auto;
 }
 .center {
@@ -173,5 +173,5 @@ li a:hover {
   .sidenav a {
     font-size: 18px;
   }
-}
+} */
 </style>
