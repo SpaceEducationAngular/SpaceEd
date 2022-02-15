@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,10 +14,14 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class LecturesComponent {
+  posts:any;
 
   constructor(private http: HttpClient) { }
 
   getLectures(){
-    return this.http.get('http://localhost:3001/api/items/homePosts');
+    this.http.get('http://localhost:3001/api/items/homePosts').subscribe((result)=>{
+      this.posts = result
+      console.log(this.posts,"HELOO")
+    })
   }
 }
