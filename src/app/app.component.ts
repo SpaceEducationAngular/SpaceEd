@@ -14,13 +14,10 @@ export class AppComponent{
 
   constructor(private lectures:LecturesComponent, private login:LoginComponent){
 
-    this.lectures.getLectures().subscribe(result=>{
-      console.log(result,"HELOO")
-    })
+    this.lectures.getLectures()
 
-    this.login.getUser().subscribe(data=>{
-      console.log(data)
-    })
+    this.login.getUser()
+    
     // this.login.getUserFormData().subscribe(data=>{
     //   console.log(data)
     // })
