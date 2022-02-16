@@ -1,21 +1,46 @@
+.bi{
+	margin: 0;
+}
+
 .title-nav {
+overflow: hidden;
 color: white;
 font-size: x-large;
 }
 
 nav{
+display: flex;
+justify-content: space-between;
 overflow:hidden;
 width: 100%; /* Full width */
 padding-left: 10%;
-position: -webkit-sticky;
-	position: sticky;
-	top: 0;
+align-items: center;
 }
 
-a{
+
+.title-nav{
+padding-left: 50px;
 float: left;
 display: block;
 color: #f2f2f2;
 text-align: center;
 text-decoration: none;
+}
+
+nav a{
+	padding-right: 10%;
+	margin-left: auto;
+	order : -1
+}
+
+#search-icon{
+	color: #f2f2f2;
+}
+
+.login-btn{
+	float: right;
+}
+
+svg{
+	height: 100%;
 }
