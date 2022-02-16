@@ -1,0 +1,11 @@
+<p>post-lecture works!</p>
+<form #postsForm="ngForm" (ngSubmit)="getPostFormData(postsForm.value)">
+    <p>title:</p>
+    <input type="text" ngModel name="title">
+    <p>description:</p>
+    <input type="text" ngModel name="description">
+    <p>categorie:</p>
+    <input type="text" ngModel name="categorie">
+    <input type="file" ng2FileSelect [uploader]="uploader" />
+    <button type="submit" (click)="upload()" class="btn">add</button>
+</form>
