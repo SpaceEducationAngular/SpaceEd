@@ -1,5 +1,21 @@
-/* *{
-    padding: 0 !important;
-    margin:0 !important;
-} */
+.title-nav {
+color: white;
+font-size: x-large;
+}
 
+nav{
+overflow:hidden;
+width: 100%; /* Full width */
+padding-left: 10%;
+position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+a{
+float: left;
+display: block;
+color: #f2f2f2;
+text-align: center;
+text-decoration: none;
+}
