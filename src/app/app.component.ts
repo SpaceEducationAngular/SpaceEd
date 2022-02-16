@@ -12,7 +12,9 @@ export class AppComponent{
   title = 'spaceeducationang';
   users:any;
 
-  constructor(private lectures:LecturesComponent, private login:LoginComponent){
+  constructor(
+    private lectures:LecturesComponent, 
+    private login:LoginComponent){
 
     this.lectures.getLectures()
 

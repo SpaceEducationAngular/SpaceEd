@@ -10,7 +10,7 @@
           <td><h5>Picture</h5></td>
           
           <td><h5>Create room</h5></td>
-          <tr  *ngFor=" let elem of posts" >
+          <tr   >
             <td  >title</td>
             <td ><img class="img" ng-src="elem.image_post" alt="" /></td>
             <!-- <td>{{ elem.description }}</td> -->
@@ -55,7 +55,7 @@
   </div>
   
 
-  <!-- <div class="formbg">
+  <div class="formbg">
     <div class="formbg-inner padding-horizontal--48">
       <span class="padding-bottom--15">Users List </span>
   <table class="table">
@@ -69,9 +69,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="teachers-table">
+      <tr class="teachers-table" *ngFor="let elem of posts" >
         <th scope="row">1</th>
-        <td>@mdo</td>
+        <td>{{elem.title}}</td>
         <td>@mdo</td>
         <td>@mdo</td>
         <td>@mdo</td>
@@ -80,4 +80,4 @@
     </tbody>
   </table>
 </div>
-</div> -->
+</div>
