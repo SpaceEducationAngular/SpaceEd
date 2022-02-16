@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({providedIn: 'root'})
 
 @Component({
   selector: 'app-post-lecture',
@@ -7,7 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostLectureComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+getPostFormData(data:any){
+  this.http.post('http://localhost:3001/api/items/posts', data).subscribe(result=>{
+    console.log(result);
+  })
+}
 
   ngOnInit(): void {
   }
