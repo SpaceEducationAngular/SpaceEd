@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FileUploader, FileUploaderOptions, ParsedResponseHeaders } from 'ng2-file-upload';
+import { cloudinary } from '@cloudinary/angular-13.x'
 
 @Injectable({providedIn: 'root'})
 
@@ -11,6 +13,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostLectureComponent implements OnInit {
 
+  private hasBaseDropZoneOver: boolean = false;
+  private uploader: FileUploader;
   constructor(private http:HttpClient) { }
 
 getPostFormData(data:any){
@@ -20,6 +24,31 @@ getPostFormData(data:any){
 }
 
   ngOnInit(): void {
+    const uploaderOptions: FileUploaderOptions = {
+      url: `https://api.cloudinary.com/v1_1/${this.cloudinary.config().campgo}/upload`
+      autoUpload: true,
+      isHTML5: true,
+      // Calculate progress independently for each uploaded file
+      removeAfterUpload: true,
+      // XHR request headers
+      headers: [
+        {
+          name: 'X-Requested-With',
+          value: 'XMLHttpRequest'
+        }
+      ]
+    };
+    this.uploader = new FileUploader(uploaderOptions);
+
+    this.uploader.onBuildItemForm = (fileItem: any, form: FormData): any => {
+      form.append('upload_preset', this.cloudinary.config().upload_preset);
+
+      form.append('file', fileItem);
+
+      fileItem.withCredentials = false;
+      return { fileItem, form };
+    };
+
   }
 
 }
