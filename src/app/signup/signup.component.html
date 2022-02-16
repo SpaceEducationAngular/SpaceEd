@@ -1,15 +1,15 @@
-<section class="vh-100">
+<section class="vh-100" style="background-color: rgb(238, 238, 238)">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
-          <div class="card text-black">
+          <div class="card text-black" style="border-radius: 25px">
             <div class="p-md-5">
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                    Create a new account
+                    Sign up
                   </p>
-                  <form #signupForm="ngForm" (ngSubmit)="loginUserFormData(signupForm.value)" class="mx-1 mx-md-4">
+                  <form  class="mx-1 mx-md-4">
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
@@ -17,7 +17,7 @@
                           type="text"
                           id="form3Example1c"
                           class="form-control"
-                          ngModel
+                          [(ngModel)]="firstName"
                           name="firstName"
                         />
                         <label class="form-label" for="form3Example1c"
@@ -32,7 +32,7 @@
                           type="text"
                           id="form3Example1c"
                           class="form-control"
-                          ngModel
+                          [(ngModel)]="lastName"
                           name="lastName"
                         />
                         <label class="form-label" for="form3Example1c"
@@ -47,7 +47,7 @@
                           type="email"
                           id="form3Example3c"
                           class="form-control"
-                          ngModel
+                          [(ngModel)]="email"
                           name="email"
                         />
                         <label class="form-label" for="form3Example3c"
@@ -62,7 +62,7 @@
                           type="password"
                           id="form3Example4c"
                           class="form-control"
-                          ngModel
+                          [(ngModel)]="password"
                           name="password"
                         />
                         <label class="form-label" for="form3Example4c"
@@ -77,7 +77,7 @@
                           type="password"
                           id="form3Example4cd"
                           class="form-control"
-                          ngModel
+                          
                           name="confirmPassword"
                         />
                         <label class="form-label" for="form3Example4cd"
@@ -92,7 +92,7 @@
                           type="date"
                           id="form3Example1c"
                           class="form-control"
-                          ngModel
+                          [(ngModel)]="dob"
                           name="dob"
                         />
                         <label class="form-label" for="form3Example1c"
@@ -107,7 +107,7 @@
                           type="number"
                           id="form3Example1c"
                           class="form-control"
-                          ngModel
+                          [(ngModel)]="phone"
                           name="phone"
                         />
                         <label class="form-label" for="form3Example1c"
@@ -122,7 +122,7 @@
                           type="file"
                           id="form3Example1c"
                           class="form-control"
-                          ngModel
+                          [(ngModel)]="image_user"
                           name="image_user"
                         />
                         <label class="form-label" for="form3Example1c"
@@ -145,7 +145,7 @@
                     <div
                       class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
                     >
-                      <button routerLink={{path}} routerLinkActive="active" type="submit" class="btn btn-primary btn-lg">
+                      <button (click)="signUp($event)" class="btn btn-primary btn-lg">
                         Register
                       </button>
                     </div>
@@ -159,6 +159,11 @@
                     order-1 order-lg-2
                   "
                 >
+                  <img
+                    src="../img/edu.png"
+                    class="img-fluid"
+                    alt="Sample image"
+                  />
                 </div>
               </div>
             </div>
