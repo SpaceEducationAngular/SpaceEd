@@ -1,3 +1,83 @@
-<div>
-    
+<div class="formbg">
+    <div class="formbg-inner padding-horizontal--48">
+      <span class="padding-bottom--15">Users List </span>
+      <!-- <form id="stripe-login"> -->
+      <div class="field padding-bottom--24">
+        <table>
+          <td><h5>title</h5></td>
+          <td><h5>category</h5></td>
+          <!-- <td><h5>description</h5></td> -->
+          <td><h5>Picture</h5></td>
+          
+          <td><h5>Create room</h5></td>
+          <tr  *ngFor=" let elem of posts" >
+            <td  >title</td>
+            <td ><img class="img" ng-src="elem.image_post" alt="" /></td>
+            <!-- <td>{{ elem.description }}</td> -->
+            <td><img class="img" ng-src="elem.image_post" alt="" /></td>
+            
+            <td><a href="http://localhost:8080/">Create</a></td>
+          </tr>
+        </table>
+        <!-- <hr />
+        <h4>change category of User</h4>
+        <div class="flex-flex">
+          <label>Users</label>
+          <select name="id_user" @input="change">
+            <option value="">select User</option>
+
+            <option
+              v-for="elem in this.users"
+              :key="elem"
+              :value="elem.id_user"
+            >
+              {{ elem.firstName }} {{ elem.firstName }}
+            </option>
+          </select>
+          <label>select User</label>
+          <select name="id_category" @input="change">
+            <option value="">select Category</option>
+
+            <option
+              v-for="elem in this.dataCategory"
+              :key="elem"
+              :value="elem.id_category"
+            >
+              {{ elem.label_category }}
+            </option>
+          </select>
+          <button v-on:click="add()">Submit</button>
+        </div> -->
+
+        
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- <div class="formbg">
+    <div class="formbg-inner padding-horizontal--48">
+      <span class="padding-bottom--15">Users List </span>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">title</th>
+        <th scope="col">category</th>
+        <th scope="col">Picture</th>
+        <th scope="col">Create room</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="teachers-table">
+        <th scope="row">1</th>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      
+    </tbody>
+  </table>
 </div>
+</div> -->

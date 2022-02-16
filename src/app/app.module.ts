@@ -8,17 +8,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { PostLectureComponent } from './post-lecture/post-lecture.component'
+import { LecturesComponent } from './lectures/lectures.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    PostLectureComponent
+    LecturesComponent
   ],
   imports: [
-    
     BrowserModule,
     AppRoutingModule,
     NgbModule,
@@ -30,5 +29,5 @@ import { PostLectureComponent } from './post-lecture/post-lecture.component'
 })
 export class AppModule { 
 
-  
+
 }
