@@ -10,13 +10,17 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   user:any;
   constructor(private http:HttpClient) { }
-  getUser(){
-    return this.http.get('http://localhost:3001/api/items/userall');
-  }
   getUserFormData(data:any){
     this.http.post('http://localhost:3001/api/items/userlogin',data).subscribe(result=>{
       console.log(result)
     })
   }
+
+  getUser(){
+    this.http.get('http://localhost:3001/api/items/userall');
+  }
+
+  
+
   ngOnInit(): void { }
 }

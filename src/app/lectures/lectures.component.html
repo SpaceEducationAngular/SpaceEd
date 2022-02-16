@@ -10,11 +10,11 @@
           <td><h5>Picture</h5></td>
           
           <td><h5>Create room</h5></td>
-          <tr *ngFor="let elem of posts" :key="elem">
-            <td>{{ elem.title }}</td>
-            <td>{{ elem.label_type }} <img class="img" :src="elem.image_type" alt="" /></td>
+          <tr  *ngFor=" let elem of posts" >
+            <td  >title</td>
+            <td ><img class="img" ng-src="elem.image_post" alt="" /></td>
             <!-- <td>{{ elem.description }}</td> -->
-            <td><img class="img" :src="elem.image_post" alt="" /></td>
+            <td><img class="img" ng-src="elem.image_post" alt="" /></td>
             
             <td><a href="http://localhost:8080/">Create</a></td>
           </tr>
@@ -52,4 +52,8 @@
         
       </div>
     </div>
+<<<<<<< HEAD
   </div>
+=======
+  </div>
+>>>>>>> deebc6bcca667cdc85562aa0bea757248b782a77
