@@ -1,7 +1,7 @@
 
   <div class="formbg">
     <div>
-    <!-- <div class="formbg-inner padding-horizontal--48" #PostForm="ngForm" (ngSubmit)="getPostFormData(PostForm.value)"> -->
+    <div class="formbg-inner padding-horizontal--48" >
       <h3>Post a lecture:</h3>
       <div class="row">
         <div class="col">
@@ -48,15 +48,23 @@
             <label class="form-label" for="form8Example4">Image:</label>
             <form action="" method="post" enctype="multipart/form-data">
               <!-- <input type="file" NgModel ng2FileSelect [uploader]="uploader"> -->
-          </form>
+              <input
+              type="file"
+              id="form3Example1c"
+              class="form-control"
+              (change)="postImage($event)"
+              name="image_post"
+            />
+
+            </form>
           </div>
         </div>
         <div class="col">
           <!-- Email input -->
           <div class="form-outline">
-                    <label class="form-label" for="form8Example4">Click to submit:</label>
+                    <label class="form-label" for="form8Example4" >Click to submit:</label>
     
-                <!-- <button type="submit" class="btn btn-primary btn-block mb-4" (click)="upload()" class="btn" >Submit</button> -->
+                <button type="submit" class="btn btn-primary btn-block mb-4" (click)="getPostFormData($event)" class="btn" >Submit</button>
           </div>
         </div>
       </div>
