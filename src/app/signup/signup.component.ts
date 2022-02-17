@@ -63,7 +63,7 @@ export class SignupComponent implements OnInit {
     event.preventDefault();
     console.log(event)
     this.image_user= event.target.files[0]
-    const formData = new formata();
+    const formData = new formData();
     formData.append("file",this.image_user)
     formData.append("upload_preset", "ehzqyvxt")
     axios
