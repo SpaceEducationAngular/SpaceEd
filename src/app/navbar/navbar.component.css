@@ -9,6 +9,7 @@ font-size: x-large;
 }
 
 nav{
+background-color: #0a246b !important;
 display: flex;
 justify-content: space-between;
 overflow:hidden;
@@ -41,6 +42,10 @@ nav a{
 	float: right;
 }
 
-svg{
-	height: 100%;
+.icon-container{
+	display: flex;
+}
+
+.icon-container > a {
+	justify-content: space-between;
 }
