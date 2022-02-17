@@ -38,7 +38,6 @@ import { ProfilUserComponent } from './profil-user/profil-user.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
   
 }
-
