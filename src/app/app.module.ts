@@ -11,6 +11,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LecturesComponent } from './lectures/lectures.component';
 import { FeedComponent } from './feed/feed.component';
 import { SignupComponent } from './signup/signup.component';
+import { PostLectureComponent } from './post-lecture/post-lecture.component';
+import { SearchComponent } from './search/search.component';
+import { ProfilUserComponent } from './profil-user/profil-user.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +23,10 @@ import { SignupComponent } from './signup/signup.component';
     NavbarComponent,
     LecturesComponent,
     FeedComponent,
-    SignupComponent
+    SignupComponent,
+    PostLectureComponent,
+    SearchComponent,
+    ProfilUserComponent
   ],
   imports: [
     BrowserModule,
