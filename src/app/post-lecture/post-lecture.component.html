@@ -8,7 +8,7 @@
           <!-- Name input -->
           <div class="form-outline">
             <label class="form-label" for="form8Example1">Title:</label>
-            <input type="text" id="form8Example1" class="form-control" ngModel name="title" :value="title"/>
+            <input type="text" id="form8Example1" class="form-control" ngModel name="title" value="title"/>
           </div>
         </div>
         <div class="col">
@@ -33,11 +33,13 @@
             <select class="form-select" aria-label="Default select example" name="id_type">
               <option value="">select type of lecture</option>
 
-              <option ngModel
-                *ngFor="elem in this.datatype"
-                :key="elem"
-                :value="elem.id_type"
+              <option class="option-type" 
+                ngModel
+                *ngFor="let elem of type"
+                key="elem"
+                value="{{elem}}"
               >
+              {{elem}}
               </option>
             </select>
           </div>

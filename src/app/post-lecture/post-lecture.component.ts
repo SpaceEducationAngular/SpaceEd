@@ -16,6 +16,7 @@ export class PostLectureComponent implements OnInit {
   title: string = '';
   description: string = '';
   image_post: string = '';
+  type:string='';
 
   async getPostFormData(data: any) {
     data.preventDefault();
@@ -57,7 +58,13 @@ export class PostLectureComponent implements OnInit {
 
   }
   ngOnInit(): void {
-
+    axios
+    .get('http://localhost:3001/api/items/type')
+    .then(result=>{
+      this.type=result.data
+      
+      console.log(this.type)
+    })
   }
 }
 

@@ -12,26 +12,43 @@ import axios from 'axios';
 })
 export class LoginComponent implements OnInit {
   user:any;
-
+email : string=""
+password :string=""
   
   constructor(private http:HttpClient ,private router: Router) { }
 
-  async getUserFormData(data:any){
-    await axios.post('http://localhost:3001/api/items/userlogin',data).then(result=>{
-      console.log(result)
-      if(result.data){
-        this.router.navigate(['/']);
-      }else{
-        this.router.navigate(['/login']);
-      }
-    })
-  }
-
-  getUser(){
-    this.http.get('http://localhost:3001/api/items/userall');
-  }
-
   
+
+  async getUser(){
+    await axios.get('http://localhost:3001/api/items/userall').then(result=>{
+      console.log(result)
+    });
+  }
+
+ 
+  
+  add() {
+    var option = {
+      email: this.email,
+      password: this.password,
+    };
+    console.log(option);
+    axios
+      .post("http://localhost:3001/api/items/userlogin", option)
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("user", JSON.stringify(response.data[0]));
+        
+        // location.reload();
+        if(response.data){
+          this.router.navigate(['/']);
+          setTimeout(()=>location.reload(),1)
+        }else{
+          this.router.navigate(['/login']);
+        }
+      })
+      
+  }
 
   ngOnInit(): void { }
 
