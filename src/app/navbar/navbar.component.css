@@ -30,8 +30,7 @@ text-decoration: none;
 
 nav a{
 	padding-right: 10%;
-	margin-left: auto;
-	order : -1
+	margin-left: 50px;
 }
 
 #search-icon{

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-
+import { Router } from '@angular/router';
+import axios from 'axios';
 @Injectable({providedIn: 'root'})
 
 @Component({
@@ -14,11 +14,16 @@ export class LoginComponent implements OnInit {
   user:any;
 
   
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient ,private router: Router) { }
 
-  getUserFormData(data:any){
-    this.http.post('http://localhost:3001/api/items/userlogin',data).subscribe(result=>{
+  async getUserFormData(data:any){
+    await axios.post('http://localhost:3001/api/items/userlogin',data).then(result=>{
       console.log(result)
+      if(result.data){
+        this.router.navigate(['/']);
+      }else{
+        this.router.navigate(['/login']);
+      }
     })
   }
 
