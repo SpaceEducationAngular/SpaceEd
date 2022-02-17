@@ -25,7 +25,7 @@ const routes: Routes = [
       {path:'navbar',component:NavbarComponent},
       {path:'login',component:LoginComponent},
       {path:'lectures',component:LecturesComponent},
-      {path:'feed',component:FeedComponent},
+      {path:'',component:FeedComponent},
       {path:'dashboard',component:DashboardComponent},
       {path:'booking',component:BookingComponent},
       {path:'add-type',component:AddTypeComponent},

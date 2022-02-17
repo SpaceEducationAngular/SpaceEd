@@ -93,6 +93,7 @@ export default {
 </template>
 
 <style>
+<<<<<<< HEAD
 /* body {
   font-size: 28px;
 } */
@@ -178,4 +179,7 @@ li a:hover {
   }
 } */
 >>>>>>> a691a4c432982359a31eea2437beea5d6461dc79:src/navbar/NavBar.vue
+=======
+
+>>>>>>> 864e371ca4e8aa982747996a05df1975354f9f4a
 </style>

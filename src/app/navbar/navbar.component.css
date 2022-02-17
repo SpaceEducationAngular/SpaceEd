@@ -1,80 +1,21 @@
+.title-nav {
+color: white;
+font-size: x-large;
+}
 
+nav{
+overflow:hidden;
+width: 100%; /* Full width */
+padding-left: 10%;
+position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
 
-.img{
-    width: auto;
-  }
-  .center {
-    position: absolute;
-    right: 0px;
-  }
-  .centerReste {
-    position: left;
-    left: 500px;
-  }
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(16, 22, 75);
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-  }
-  a:hover {
-      color: #ffffff;
-  }
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover {
-    background-color: rgb(78, 50, 179);
-  }
-  
-  .sidenav {
-    height: 100%;
-    width: 240px;
-    position: fixed;
-    z-index: 1;
-    top: 30;
-    left: 0;
-    background-color: rgb(218, 204, 204);
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-  
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-  }
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {
-      padding-top: 15px;
-    }
-    .sidenav a {
-      font-size: 18px;
-    }
-  }
+a{
+float: left;
+display: block;
+color: #f2f2f2;
+text-align: center;
+text-decoration: none;
+}
