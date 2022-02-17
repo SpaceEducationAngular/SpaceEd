@@ -26,16 +26,33 @@ user: any
 key:any
 
   constructor() { }
-  mounted(){
-    
-  }
-  
  
 
   ngOnInit(): void {
+    // axios
+    //   .get("http://localhost:3001/api/items/user/")
+    //   .then((result)=>{
+    //     this.firstName=result.data[0].firstName
+    //     console.log(this.firstName)
+    //     this.lastName=result.data[0].lastName
+    //     this.email=result.data[0].email
+    //     this.phone=result.data[0].phone
+    //     this.dob=result.data[0].dob
+    //     this.image_user=result.data[0].image_user
+        
+    //     this.users = [result.data[0]]
+    //     console.log(this.user)
+        
+    //   })
+      
+    this.key = localStorage.getItem("key");
+    
+      this.user = JSON.parse(localStorage.getItem("user")!);    
+    console.log(this.user);
+    var id = this.user.id_user
     axios
-      .get("http://localhost:3001/api/items/user/26")
-      .then((result)=>{
+      .get(`http://localhost:3001/api/items/user/`+id)
+      .then((result) => {
         this.firstName=result.data[0].firstName
         console.log(this.firstName)
         this.lastName=result.data[0].lastName
@@ -45,22 +62,9 @@ key:any
         this.image_user=result.data[0].image_user
         
         this.users = [result.data[0]]
-        console.log(this.user)
+        console.log(this.users)
         
-      })
-      
-    this.key = 1||localStorage.getItem("key");
-    if (this.key == 1) {
-      this.user = JSON.parse(localStorage.getItem("profil")!)[0];
-    } else {
-      this.user = JSON.parse(localStorage.getItem("user")!);
-    }
-    console.log(this.user);
-    axios
-      .get(`http://localhost:3001/api/items/profilPosts/${this.user.id}`)
-      .then((response) => {
-        this.posts = response.data;
-        console.log(this.posts);
+        
         // location.reload();
         // localStorage.setItem("posts", JSON.stringify(this.posts));
       });

@@ -14,7 +14,7 @@ export class AppComponent{
 
   constructor(
     private profil:ProfilUserComponent,
-    private lectures:LecturesComponent, 
+    // private lectures:LecturesComponent, 
     private login:LoginComponent,
     
     ){
@@ -22,8 +22,7 @@ export class AppComponent{
     // this.lectures.getLectures()
 
     this.login.getUser()
-    // this.profil.mounted()
-
+  
     
     // this.login.getUserFormData().subscribe(data=>{
     //   console.log(data)
