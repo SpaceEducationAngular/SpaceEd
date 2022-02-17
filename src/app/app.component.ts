@@ -19,11 +19,11 @@ export class AppComponent{
     
     ){
 
-    this.lectures.getLectures()
+    // this.lectures.getLectures()
 
     this.login.getUser()
+    // this.profil.mounted()
 
-    this.profil.getProfileData()
     
     // this.login.getUserFormData().subscribe(data=>{
     //   console.log(data)

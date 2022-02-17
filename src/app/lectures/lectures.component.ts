@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import axios from 'axios';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./lectures.component.css']
 })
 
-export class LecturesComponent {
+export class LecturesComponent implements OnInit {
   posts:any;
 
   constructor(private http: HttpClient) { }
@@ -23,5 +24,14 @@ export class LecturesComponent {
       this.posts = result
       console.log(this.posts,"HELOO")
     })
+  }
+
+  ngOnInit(): void{
+    // axios
+    // .get('http://localhost:3001/api/items/homePosts')
+    // .then(result=>{
+    //   console.log(result)
+    //   this.posts = result
+    // })
   }
 }
