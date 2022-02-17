@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LecturesComponent } from './lectures/lectures.component';
 import { FeedComponent } from './feed/feed.component';
 import { SignupComponent } from './signup/signup.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SignupComponent } from './signup/signup.component';
     NavbarComponent,
     LecturesComponent,
     FeedComponent,
-    SignupComponent
+    SignupComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
