@@ -2,21 +2,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 18%;
-    margin-right: 4%;
-    padding: 0;
 }
 
-img {
-    width:  80%;
-    height: 100%;
+.carousel-inner {
+    width:  100%;
     margin:auto;
-    border:2px solid #000000b6;
     border-radius: 1%;
 }
 
 h3{
     align-self: center;
+}
+
+h5 {
+  color: black;
+  text-align:center;
+}
+
+p {
+  color:black;
 }
 
 .card-deck{
@@ -43,3 +47,9 @@ h3{
     height: 15vw;
     object-fit: cover;
   }
+
+  .icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;  }
+

@@ -122,7 +122,7 @@
                           type="file"
                           id="form3Example1c"
                           class="form-control"
-                          [(ngModel)]="image_user"
+                          (change)="postImage($event)"
                           name="image_user"
                         />
                         <label class="form-label" for="form3Example1c"
