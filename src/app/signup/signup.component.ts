@@ -63,9 +63,10 @@ export class SignupComponent implements OnInit {
     event.preventDefault();
     console.log(event)
     this.image_user= event.target.files[0]
-    const formData = new formata();
+    const formData = new FormData();
     formData.append("file",this.image_user)
     formData.append("upload_preset", "ehzqyvxt")
+    formData.append("cloud_name","brahamtahar")
     axios
     .post("http://api.cloudinary.com/v1_1/brahamtahar/upload", formData)
     .then((result)=>{

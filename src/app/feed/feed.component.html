@@ -1,40 +1,19 @@
-<ngb-carousel class="feed-container">
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img src="https://media.discordapp.net/attachments/940527989765046312/941934461807886406/carrouselle.jpg" alt="Random first slide">
+<div class="feed-container carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active"
     
-      
-    
+    >
+      <img class="d-block w-100" src="https://media.discordapp.net/attachments/940527989765046312/941934461807886406/carrouselle.jpg">
+    </div>
+    <div class="item">
+      <img class="d-block w-100" src="https://jooinn.com/images/education-1.jpg" alt="Second slide">
+    </div>
+    <div class="item">
+      <img class="d-block w-100" src="https://media.discordapp.net/attachments/940527989765046312/941934462248304640/carrouselle2.jpg" alt="Third slide">
+    </div>
   </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper ">
-      <img src="https://jooinn.com/images/education-1.jpg" alt="Random second slide">
-    
-      
-    
-  </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img src="https://media.discordapp.net/attachments/940527989765046312/941934462248304640/carrouselle2.jpg"  alt="Random third slide">
-    
-      
-    
-  </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper">
-      <img src="https://media.discordapp.net/attachments/940527989765046312/941934462726451200/carrouselle3.jpg" alt="Random fourth slide">
-    
-      
-    
-  </div>
-  </ng-template>
-</ngb-carousel>
-<br/>
-<br/>
-<br/>
+</div>
+
 <br/>
 
 <div class="card-deck">
@@ -49,19 +28,77 @@
   <div class="card shadow-lg p-3 mb-5 bg-white rounded">
     <img class="card-img-top" src="https://aup.imgix.net/user_images/148689/maths.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Maths Courses</h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
   <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-    <img class="card-img-top" src="data:image/jpeg;base64,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" alt="Card image cap">
+    <img class="card-img-top" src="https://static.boredpanda.com/blog/wp-content/uploads/2015/05/natural-umbrella-animal-photography-fb.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Natural Science</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
 </div>
+
+<br/>
+
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3">
+
+  <!-- Footer Elements -->
+  <div class="footer-container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class=" icon-container mb-5">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="10 0 512 512" width="20%" height="20%"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20%" height="20%"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20%" height="20%"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256,8C119.1,8,8,119.1,8,256S119.1,504,256,504,504,392.9,504,256,392.9,8,256,8ZM185.3,380a124,124,0,0,1,0-248c31.3,0,60.1,11,83,32.3l-33.6,32.6c-13.2-12.9-31.3-19.1-49.4-19.1-42.9,0-77.2,35.5-77.2,78.1S142.3,334,185.3,334c32.6,0,64.9-19.1,70.1-53.3H185.3V238.1H302.2a109.2,109.2,0,0,1,1.9,20.7c0,70.8-47.5,121.2-118.8,121.2ZM415.5,273.8v35.5H380V273.8H344.5V238.3H380V202.8h35.5v35.5h35.2v35.5Z"/></svg>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20%" height="20%"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20%" height="20%"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="20%" height="20%"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 
