@@ -13,7 +13,7 @@ export class AppComponent{
   users:any;
 
   constructor(
-    private profil:ProfilUserComponent,
+    // private profil:ProfilUserComponent,
     // private lectures:LecturesComponent, 
     private login:LoginComponent,
     
