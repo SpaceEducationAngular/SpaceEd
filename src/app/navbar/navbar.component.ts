@@ -12,7 +12,8 @@ export class NavbarComponent implements OnInit {
   datatype: any;
   user: any;
   id_category=0;
-id : any
+  id : any
+
   constructor(private router : Router) {}
 
   changeKey(){
