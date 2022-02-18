@@ -5,17 +5,17 @@ import { Injectable } from '@angular/core';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css']
+  styleUrls: ['./booking.component.css'],
 })
 export class BookingComponent implements OnInit {
-  id_user: any
-  id_category: any
-  users: any
-  dataCategory: any
-  user:any
-  booked:any
-  constructor() { }
-  
+  id_user: any;
+  id_category: any;
+  users: any;
+  dataCategory: any;
+  user: any;
+  booked: any;
+  constructor() {}
+
   add() {
     var option = {
       id_category: this.id_category,
@@ -33,13 +33,15 @@ export class BookingComponent implements OnInit {
       });
   }
   ngOnInit(): void {
-    this.user= JSON.parse(localStorage.getItem("user")!)
-    axios.get(`http://localhost:3001/api/items/booking/${this.user.id_user}`).then((response) => {
-      this.booked = response.data;
-      console.log(this.booked);
-      // localStorage.setItem("type", JSON.stringify(this.type));
-    });
-    axios.get("http://localhost:3001/api/items/category").then((res) => {
+    this.user = JSON.parse(localStorage.getItem('user')!);
+    axios
+      .get(`http://localhost:3001/api/items/booking/${this.user.id_user}`)
+      .then((response) => {
+        this.booked = response.data;
+        console.log(this.booked);
+        // localStorage.setItem("type", JSON.stringify(this.type));
+      });
+    axios.get('http://localhost:3001/api/items/category').then((res) => {
       this.dataCategory = res.data;
       console.log(this.dataCategory);
     });
