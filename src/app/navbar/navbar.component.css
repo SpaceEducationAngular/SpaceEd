@@ -1,51 +1,50 @@
 .title-nav {
-overflow: hidden;
-color: white;
-font-size: x-large;
+  overflow: hidden;
+  color: white;
+  font-size: x-large;
 }
 
-nav{
-background-color: #0a246b !important;
-display: flex;
-justify-content: space-between;
-overflow:hidden;
-width: 100%; /* Full width */
-padding-left: 5%;
-align-items: center;
+nav {
+  background-color: #0a246b !important;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%; /* Full width */
+  padding-left: 5%;
+  align-items: center;
 }
 
-
-.title-nav{
-padding-left: 50px;
-float: left;
-display: block;
-color: #f2f2f2;
-text-align: center;
-text-decoration: none;
+.title-nav {
+  padding-left: 50px;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
 }
 
-nav a{
-	padding-right: 10%;
-	margin-left: 15px;
-	text-decoration: none;
+nav a {
+  padding-right: 10%;
+  margin-left: 15px;
+  text-decoration: none;
 }
 
-.navbar-nav:hover{
-	color:darkcyan
+.navbar-nav:hover {
+  color: darkcyan;
 }
 
-#search-icon{
-	color: #f2f2f2;
+#search-icon {
+  color: #f2f2f2;
 }
 
-.login-btn{
-	float: right;
+.login-btn {
+  float: right;
 }
 
-.icon-container{
-	display: flex;
+.icon-container {
+  display: flex;
 }
 
 .icon-container > a {
-	justify-content: space-between;
+  justify-content: space-between;
 }
