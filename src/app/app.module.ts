@@ -16,6 +16,7 @@ import { SearchComponent } from './search/search.component';
 import { ProfilUserComponent } from './profil-user/profil-user.component';
 import { AddTypeComponent } from './add-type/add-type.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
+import { BookingComponent } from './booking/booking.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AddTeacherComponent } from './add-teacher/add-teacher.component';
     SearchComponent,
     ProfilUserComponent,
     AddTypeComponent,
-    AddTeacherComponent
+    AddTeacherComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,

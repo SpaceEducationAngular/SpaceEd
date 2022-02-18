@@ -13,6 +13,7 @@ import axios from 'axios';
 })
 export class LecturesComponent implements OnInit {
   posts: any;
+  category:any;
 
   constructor(private http: HttpClient) {}
 
@@ -29,8 +30,15 @@ export class LecturesComponent implements OnInit {
     axios
     .get('http://localhost:3001/api/items/homePosts')
     .then(result=>{
-      console.log(result)
+      console.log(result,"HERE")
       this.posts = result.data
+    })
+
+    axios
+    .get('http://localhost:3001/api/items/type')
+    .then(result=>{
+      console.log(result,"HERE")
+      this.category = result.data
     })
   }
 }
