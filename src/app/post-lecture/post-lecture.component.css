@@ -1,8 +1,28 @@
-.formbg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 6%;
-    
+.formbg {
+  padding-top: 6%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formbg-inner {
+  padding: 6%;
+  border: 1px solid;
+  border-radius: 25px;
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  padding: 3%;
+}
+
+button:hover {
+  color: white;
+  background-color: blue;
+}
+
+select {
+  font-size: 20px;
 }

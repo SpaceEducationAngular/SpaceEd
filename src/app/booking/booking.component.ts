@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
-
+import { Injectable } from '@angular/core';
+@Injectable({ providedIn: 'root' })
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css']
+  styleUrls: ['./booking.component.css'],
 })
 export class BookingComponent implements OnInit {
-  booked: any;
+  id_user: any;
+  id_category: any;
+  users: any;
   dataCategory: any;
-  users: any
-  id_user: string ='';
-  id_category: string= '';
-  user:any //it must be changed to the line commented bellow
-  // user: JSON.parse(localStorage.getItem("user")),
+  user: any;
+  booked: any;
+  constructor() {}
 
-  constructor() { }
   add() {
     var option = {
       id_category: this.id_category,
-      // id_user: this.id_user,
+      id_user: this.id_user,
     };
     console.log(option);
     axios
@@ -27,28 +27,21 @@ export class BookingComponent implements OnInit {
       .then((response) => {
         location.reload();
         console.log(response);
-        
       })
       .catch((error) => {
         console.log(error);
       });
   }
-
-
-  async change(event: any){
-    [event.target.name] = event.target.value
-    console.log(event.target.name);
-  }
-
-  
-
   ngOnInit(): void {
-    axios.get(`http://localhost:3001/api/items/booking/${this.user.id_user}`).then((response) => {
-      this.booked = response.data;
-      console.log(this.booked);
-      // localStorage.setItem("type", JSON.stringify(this.type));
-    });
-    axios.get("http://localhost:3001/api/items/category").then((res) => {
+    this.user = JSON.parse(localStorage.getItem('user')!);
+    axios
+      .get(`http://localhost:3001/api/items/booking/${this.user.id_user}`)
+      .then((response) => {
+        this.booked = response.data;
+        console.log(this.booked);
+        // localStorage.setItem("type", JSON.stringify(this.type));
+      });
+    axios.get('http://localhost:3001/api/items/category').then((res) => {
       this.dataCategory = res.data;
       console.log(this.dataCategory);
     });

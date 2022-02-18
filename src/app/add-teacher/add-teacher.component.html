@@ -1,23 +1,22 @@
 <div class="formbg">
   <div class="formbg-inner padding-horizontal--48">
     <span class="padding-bottom--15">Users List </span>
+    <hr />
     <!-- <form id="stripe-login"> -->
     <div class="field padding-bottom--24">
       <table>
-        <td><h5>ID User</h5></td>
         <td><h5>First Name</h5></td>
+
         <td><h5>Last Name</h5></td>
         <td><h5>Email</h5></td>
         <td><h5>Category</h5></td>
-        <td><h5>Picture</h5></td>
         <td><h5>Phone Number</h5></td>
+        <hr />
         <tr *ngFor="let elem of users" key="elem">
-          <td>{{ elem.id_user }}</td>
           <td>{{ elem.firstName }}</td>
           <td>{{ elem.lastName }}</td>
           <td>{{ elem.email }}</td>
           <td>{{ elem.label_category }}</td>
-          <td><img class="img" ng-src="elem.image_user" alt="" /></td>
           <td>{{ elem.phone }}</td>
         </tr>
       </table>
@@ -25,24 +24,24 @@
       <h4>change category of User</h4>
       <div class="flex-flex">
         <label>Users</label>
-        <select name="id_user" ng-value="id_user" [(ngModel)]="id_user">
+        <select
+          name="id_user"
+          [(ngModel)]="id_user"
+          class="form-select form-select-lg mb-3"
+        >
           <option value="">select User</option>
-          <option
-            *ngFor="let elem of users"
-            :key="elem"
-            value="elem.id_user"
-          >
-            {{ elem.firstName }} {{ elem.firstName }}
+          <option *ngFor="let elem of users" :key="elem" name="id_user">
+            {{ elem.firstName }}
           </option>
         </select>
         <label>select User</label>
-        <select name="id_category" [(ngModel)]="id_category" >
+        <select
+          name="id_category"
+          [(ngModel)]="id_category"
+          class="form-select form-select-lg mb-3"
+        >
           <option value="">select Category</option>
-          <option
-            *ngFor="let elem of dataCategory"
-            :key="elem"
-            value="elem.id_category"
-          >
+          <option *ngFor="let elem of dataCategory" key="elem">
             {{ elem.label_category }}
           </option>
         </select>
