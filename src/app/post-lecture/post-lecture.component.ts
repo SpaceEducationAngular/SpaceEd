@@ -16,6 +16,8 @@ export class PostLectureComponent implements OnInit {
   title: string = '';
   description: string = '';
   image_post: string = '';
+  type:any;
+  container:any=[];
 
   async getPostFormData(data: any) {
     data.preventDefault();
@@ -41,7 +43,6 @@ export class PostLectureComponent implements OnInit {
 
   postImage(event: any) {
     event.preventDefault();
-    console.log(event)
     this.image_post = event.target.files[0]
     const formData = new FormData();
     formData.append("file", this.image_post)
@@ -50,14 +51,21 @@ export class PostLectureComponent implements OnInit {
     axios
       .post("http://api.cloudinary.com/v1_1/campgo/upload", formData)
       .then((result) => {
-        console.log(result)
         this.image_post = result.data.url
       })
 
 
   }
   ngOnInit(): void {
-
+    axios
+    .get('http://localhost:3001/api/items/type')
+    .then((result)=>{
+      (result.data.forEach((element:any) => {
+        this.container.push(element.label_type)  //map to render the types, but error mySql because no id_type !
+      }))
+      this.type=this.container
+      console.log(this.type,"container")
+    })
   }
 }
 
