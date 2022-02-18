@@ -1,1 +1,29 @@
-<p>add-type works!</p>
+<div class="formbg">
+    <div class="formbg-inner padding-horizontal--48">
+      <span class="padding-bottom--15">Add New Gategory of lecture</span>
+      <!-- <form id="stripe-login"> -->
+      <div class="field padding-bottom--24">
+        <table>
+          <td><h5>ID category of lecture</h5></td>
+          <td><h5>Label category of lecture</h5></td>
+          <td><h5>image category of lecture</h5></td>
+
+          <tr *ngFor="let elem in this.datatype">
+            <td>{{ elem.id_type }}</td>
+            <td>{{ elem.label_type }}</td>
+            <td><img class="img" :src="elem.image_type" alt="" /></td>
+          </tr>
+        </table>
+        <hr />
+        <div>
+          <label>category label of lecture </label>
+          <input name="label_type" />
+
+          <label>image of lecture category</label>
+          <input name="image_type"  />
+
+          <button>Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
