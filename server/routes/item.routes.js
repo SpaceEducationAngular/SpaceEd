@@ -15,7 +15,7 @@ router.post("/user", itemController.insertUser);
 router.post("/userlogin", itemController.selectUser);//for login
 router.get("/userall", itemController.selectAllUsers)// for change category of user
 router.get("/user/:id", itemController.selectProfile);// for profile
-router.put("/user/:id", itemController.updateUserCategory);// for change category
+router.put("/user/:firstName", itemController.updateUserCategory);// for change category
 
 
 // for post

@@ -9,23 +9,11 @@ import {LecturesComponent} from './lectures/lectures.component'
 })
 export class AppComponent{
   title = 'spaceeducationang';
-  users:any;
 
   constructor(
-    // private profil:ProfilUserComponent,
-    private lectures:LecturesComponent, 
-    // private login:LoginComponent,
     
     ){
-this.lectures.getSignature()
-    // this.lectures.getLectures()
-
-    // this.login.getUser()
-  
     
-    // this.login.getUserFormData().subscribe(data=>{
-    //   console.log(data)
-    // })
   }
 
 }

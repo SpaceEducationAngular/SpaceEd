@@ -1,23 +1,13 @@
-<div class="formbg">
-    <div class="formbg-inner padding-horizontal--48">
-      <span class="padding-bottom--15">Users List </span>
-      <!-- <form id="stripe-login"> -->
-      <div class="field padding-bottom--24">            
-            <td><button (click)="click()">Create</button></td>
-        
-      </div>
-    </div>
 
   <div class="formbg ">
     <div class="formbg-inner padding-horizontal--48">
-      <span class="padding-bottom--15">Users List </span>
   <table class="table rounded">
     <thead class="thead-dark rounded">
       <tr>
         <th scope="col">#</th>
         <th scope="col">title</th>
-        <th scope="col">category</th>
-        <th scope="col">Picture</th>
+        <th scope="col">Description</th>
+
         <th scope="col">Create room</th>
       </tr>
     </thead>
@@ -25,9 +15,9 @@
       <tr class="teachers-table" *ngFor="let elem of posts" >
         <th scope="row">1</th>
         <td>{{elem.title}}</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        <td>{{elem.description}}</td>
+
+        <td><button routerLink="http://localhost:3000" class="create-btn btn btn-primary">Join</button></td>
       </tr>
       
     </tbody>

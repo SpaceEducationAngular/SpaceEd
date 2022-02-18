@@ -146,7 +146,7 @@ var selectProfile = function (req, res) {
 var updateUserCategory = function (req, res) {
   var params = req.params.id;
   option = req.body.id_category;
-  sql = "UPDATE users SET id_category = ? WHERE id_user =? ";
+  sql = "UPDATE users SET id_category = ? WHERE firstName =? ";
   db.query(sql, [option, params], (err, items, fields) => {
     if (err) {
       res.status(500).send(err);

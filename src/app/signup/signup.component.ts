@@ -30,7 +30,7 @@ userInfo:any
         dob: this.dob,
         phone: this.phone,
         image_user: this.image_user,
-        id_category: 1,
+        id_category: 3,
       })
       .then((response) => {
         if (response.data) {
@@ -44,7 +44,7 @@ userInfo:any
               dob: this.dob,
               phone: this.phone,
               image_user: this.image_user,
-              id_category: 1,
+              id_category: 3,
             })
           );
           this.router.navigate(['/']);
