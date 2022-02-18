@@ -2,48 +2,35 @@
     <div class="formbg-inner padding-horizontal--48">
       <span class="padding-bottom--15">Users List </span>
       <!-- <form id="stripe-login"> -->
-      <div class="field padding-bottom--24">
-        <table>
-          <td><h5>title</h5></td>
-          <td><h5>category</h5></td>
-          <!-- <td><h5>description</h5></td> -->
-          <td><h5>Picture</h5></td>
-          
-          <td><h5>Create room</h5></td>
-          <tr *ngFor="let elem of posts"  >
-            <td>{{ elem.title }}</td>
-            <td>{{ elem.label_type }} <img class="img" ng-src="elem.image_type" alt="" /></td>
-            <!-- <td>{{ elem.description }}</td> -->
-            <td><img class="img" ng-src="elem.image_post" alt="" /></td>
-            
+      <div class="field padding-bottom--24">            
             <td><a href="http://localhost:8080/">Create</a></td>
-          </tr>
-        </table>
-        <!-- <hr />
-        <h4>change category of User</h4>
-        <div class="flex-flex">
-          <label>Users</label>
-          <select name="id_user" (change)="change">
-            <option value="">select User</option>
-
-            <option *ngFor="let elem of userInfo" value="">
-              {{ elem.firstName }} {{ elem.firstName }}
-            </option>
-          </select>
-          <label>select User</label>
-          <select name="id_category" (change)="change">
-            <option value="">select Category</option>
-
-            <option
-              *ngFor="let elem of this.dataCategory"
-            >
-              {{ elem.label_category }}
-            </option>
-          </select>
-          <button (click)="add()">Submit</button>
-        </div> -->
-
         
       </div>
     </div>
 
+  <div class="formbg ">
+    <div class="formbg-inner padding-horizontal--48">
+      <span class="padding-bottom--15">Users List </span>
+  <table class="table rounded">
+    <thead class="thead-dark rounded">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">title</th>
+        <th scope="col">category</th>
+        <th scope="col">Picture</th>
+        <th scope="col">Create room</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="teachers-table" *ngFor="let elem of posts" >
+        <th scope="row">1</th>
+        <td>{{elem.title}}</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+</div>

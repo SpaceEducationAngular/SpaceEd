@@ -19,9 +19,7 @@
           </div>
         </div>
       </div>
-
       <hr />
-
       <div class="row">
         <div class="col">
           <!-- Name input -->
@@ -29,15 +27,12 @@
             <label class="form-label" for="form8Example2"
               >select the categorie:</label
             >
-
             <select class="form-select" aria-label="Default select example" name="id_type">
               <option value="">select type of lecture</option>
-
               <option class="option-type" 
                 ngModel
-                *ngFor="let elem of type"
-                key="elem"
-                value="{{elem}}"
+                ngDefaultControl
+                *ngFor="let elem of type;let i=index"
               >
               {{elem}}
               </option>
@@ -57,7 +52,6 @@
               (change)="postImage($event)"
               name="image_post"
             />
-
             </form>
           </div>
         </div>
@@ -70,7 +64,5 @@
           </div>
         </div>
       </div>
-
     </div>
-
   </div>
