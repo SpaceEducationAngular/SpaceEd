@@ -68,6 +68,8 @@ p {
   /* object-fit: cover;
     flex-basis: 18%; */
   height: 50%;
+  flex-basis: 18%;
+
 }
 
 .footer-text {
@@ -84,6 +86,7 @@ p {
   display: flex;
   justify-content: baseline;
   align-items: center;
+  flex-basis: 18%;
 }
 
 .btn {
