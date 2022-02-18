@@ -30,9 +30,18 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
 
-      <a class="nav-item nav-link active" routerLink="/lectures" href="#">Lectures</a>
-      <a class="nav-item nav-link active" routerLink="/booking" href="#">Booking</a>
-      <a class="nav-item nav-link active" routerLink="/login">Log-in</a>
+      <a class="nav-item nav-link active" routerLink="/lectures" *ngIf="id_category!==0 && id_category!==3" href="#">Lectures</a>
+      <a class="nav-item nav-link active" routerLink="/booking" *ngIf="id_category!==0" href="#">Booking</a>
+      <a class="nav-item nav-link active" routerLink="/search" href="#">Search</a>
+      <a class="login-btn nav-item nav-link active" routerLink="/login" *ngIf="id_category===0">Log-in</a>
+      <!-- <a class="signup-btn nav-item nav-link active" *ngIf='id_category===0' routerLink="/signup" >Signup</a> -->
+      <a class="signup-btn nav-item nav-link active" routerLink="/profile-user" *ngIf="id_category!==0" (click)="changeKey()" >Profile</a>
+      <a class="signup-btn nav-item nav-link active" routerLink="/post-lecture" *ngIf="id_category!==0 && id_category!==3" >Post New Lecture</a>
+      <a class="nav-item nav-link active" routerLink="/add-teacher" *ngIf="id_category===1" href="#">Add teacher</a>
+      <a class="nav-item nav-link active" routerLink="/add-type" *ngIf="id_category===1" href="#">Add type</a>
+      
+      <a class="signup-btn nav-item nav-link active" (click)="logout()" routerLink="/login" *ngIf="id_category!==0">Log-Out</a>
+
     </div>
   </div>
 </nav>

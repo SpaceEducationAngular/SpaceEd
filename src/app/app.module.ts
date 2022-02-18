@@ -11,6 +11,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LecturesComponent } from './lectures/lectures.component';
 import { FeedComponent } from './feed/feed.component';
 import { SignupComponent } from './signup/signup.component';
+import { PostLectureComponent } from './post-lecture/post-lecture.component';
+import { SearchComponent } from './search/search.component';
+import { ProfilUserComponent } from './profil-user/profil-user.component';
+import { AddTypeComponent } from './add-type/add-type.component';
+import { AddTeacherComponent } from './add-teacher/add-teacher.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +25,12 @@ import { SignupComponent } from './signup/signup.component';
     NavbarComponent,
     LecturesComponent,
     FeedComponent,
-    SignupComponent
+    SignupComponent,
+    PostLectureComponent,
+    SearchComponent,
+    ProfilUserComponent,
+    AddTypeComponent,
+    AddTeacherComponent
   ],
   imports: [
     BrowserModule,
@@ -31,5 +42,6 @@ import { SignupComponent } from './signup/signup.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
-
+export class AppModule {
+  
+}
