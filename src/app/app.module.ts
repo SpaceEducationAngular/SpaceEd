@@ -1,46 +1,47 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignupComponent } from '../signup/signup/signup.component';
-import { SearchComponent } from '../search/search.component';
-import { ProfilUserComponent } from '../profil-user/profil-user.component';
-import { PostLectureComponent } from '../post-lecture/post-lecture.component';
-import { PaymentComponent } from '../payment/payment.component';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { LoginComponent } from '../login/login.component';
-import { LecturesComponent } from '../lectures/lectures.component';
-import { FeedComponent } from '../feed/feed.component';
-import { DashboardComponent } from '../dashboard/dashboard.component';
-import { BookingComponent } from '../booking/booking.component';
-import { AddTypeComponent } from '../add-type/add-type.component';
-import { AddTeacherComponent } from '../add-teacher/add-teacher.component';
-import { AboutUsComponent } from '../about-us/about-us.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LecturesComponent } from './lectures/lectures.component';
+import { FeedComponent } from './feed/feed.component';
+import { SignupComponent } from './signup/signup.component';
+import { PostLectureComponent } from './post-lecture/post-lecture.component';
+import { SearchComponent } from './search/search.component';
+import { ProfilUserComponent } from './profil-user/profil-user.component';
+import { AddTypeComponent } from './add-type/add-type.component';
+import { AddTeacherComponent } from './add-teacher/add-teacher.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
-    SearchComponent,
-    ProfilUserComponent,
-    PostLectureComponent,
-    PaymentComponent,
-    NavbarComponent,
     LoginComponent,
+    NavbarComponent,
     LecturesComponent,
     FeedComponent,
-    DashboardComponent,
-    BookingComponent,
+    SignupComponent,
+    PostLectureComponent,
+    SearchComponent,
+    ProfilUserComponent,
     AddTypeComponent,
-    AddTeacherComponent,
-    AboutUsComponent
+    AddTeacherComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+}

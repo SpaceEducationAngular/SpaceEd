@@ -1,7 +1,6 @@
 <script>
 import NavBar from "../navbar/NavBar.vue";
 import Feed from "../feed/Feed.vue";
-import PostLecture from "../post-lecture/PostLecture.vue"
 import axios from 'axios'
 export default {
   data(){
