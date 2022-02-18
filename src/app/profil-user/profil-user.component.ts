@@ -46,13 +46,24 @@ key:any
     //   })
       
     this.key = localStorage.getItem("key");
-    
-      this.user = JSON.parse(localStorage.getItem("user")!);    
-    console.log(this.user);
-    var id = this.user.id_user
-    axios
+    if (this.key == 1) {
+      this.user = JSON.parse(localStorage.getItem("profil")!)[0];
+      console.log(this.user,"heyyyyyyy")
+      this.firstName=this.user.firstName
+        console.log(this.firstName)
+        this.lastName=this.user.lastName
+        this.email=this.user.email
+        this.phone=this.user.phone
+        this.dob=this.user.dob
+        this.image_user=this.user.image_user
+        this.users = [this.user]
+    } else {
+      this.user = JSON.parse(localStorage.getItem("user")!);
+      var id = this.user.id_user
+      axios
       .get(`http://localhost:3001/api/items/user/`+id)
       .then((result) => {
+        console.log(result.data,"hhihihihiihih")
         this.firstName=result.data[0].firstName
         console.log(this.firstName)
         this.lastName=result.data[0].lastName
@@ -68,6 +79,11 @@ key:any
         // location.reload();
         // localStorage.setItem("posts", JSON.stringify(this.posts));
       });
+    }   
+    
+   
+    console.log(this.user)
+    
     }
 
 
