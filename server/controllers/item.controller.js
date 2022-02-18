@@ -114,7 +114,11 @@ var selectUser = function (req, res) {
     if (err) {
       res.status(500).send(err);
     } else {
-      res.status(200).send(items);
+      var pass = result[0]
+      if(bcrypt.compareSync(req.body.loginPassword,pass.password)){
+        res.status(200).send(items);
+      }
+      
     }
   });
 };
