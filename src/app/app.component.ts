@@ -21,7 +21,7 @@ export class AppComponent{
 
     // this.lectures.getLectures()
 
-    this.login.getUser()
+    // this.login.getUser()
   
     
     // this.login.getUserFormData().subscribe(data=>{

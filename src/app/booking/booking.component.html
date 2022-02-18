@@ -1,1 +1,25 @@
-<p>booking works!</p>
+<div class="formbg">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Teacher</th>
+        <th scope="col">Desciption</th>
+        <th scope="col">Picture</th>
+        <th scope="col">Status</th>
+        <th scope="col">Join room</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngfor="let elem of booked let i=index">
+        <td>{{ elem.title }}</td>
+        <td>{{ elem.firstName }} {{ elem.lastName }}</td>
+        <td>{{ elem.description }}</td>
+        <td><img class="img" :src={{elem.image_post}} alt="" /></td>
+        <td>{{ elem.status_booking }}</td>
+        <td><a href="http://localhost:8080/">join</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

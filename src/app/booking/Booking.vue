@@ -75,37 +75,6 @@ export default {
             <td><a href="http://localhost:8080/">join</a></td>
           </tr>
         </table>
-        <!-- <hr />
-        <h4>change category of User</h4>
-        <div class="flex-flex">
-          <label>Users</label>
-          <select name="id_user" @input="change">
-            <option value="">select User</option>
-
-            <option
-              v-for="elem in this.users"
-              :key="elem"
-              :value="elem.id_user"
-            >
-              {{ elem.firstName }} {{ elem.firstName }}
-            </option>
-          </select>
-          <label>select User</label>
-          <select name="id_category" @input="change">
-            <option value="">select Category</option>
-
-            <option
-              v-for="elem in this.dataCategory"
-              :key="elem"
-              :value="elem.id_category"
-            >
-              {{ elem.label_category }}
-            </option>
-          </select>
-          <button v-on:click="add()">Submit</button>
-        </div> -->
-
-        
       </div>
     </div>
   </div>

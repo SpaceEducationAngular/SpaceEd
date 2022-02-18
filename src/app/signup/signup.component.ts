@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
         dob: this.dob,
         phone: this.phone,
         image_user: this.image_user,
-        id_category: 3,
+        id_category: 1,
       })
       .then((response) => {
         if (response.data) {
@@ -45,7 +45,7 @@ export class SignupComponent implements OnInit {
               dob: this.dob,
               phone: this.phone,
               image_user: this.image_user,
-              id_category: 3,
+              id_category: 1,
             })
           );
           this.router.navigate(['/']);
@@ -76,5 +76,6 @@ export class SignupComponent implements OnInit {
 }
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }
