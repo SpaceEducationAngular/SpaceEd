@@ -18,7 +18,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 const routes: Routes = [
       {path:'signup',component:SignupComponent},
       {path:'search',component:SearchComponent},
-      {path:'profile-user',component:ProfilUserComponent},
+      {path:'profil-user',component:ProfilUserComponent},
       {path:'post-lecture',component:PostLectureComponent},
       {path:'payment',component:PaymentComponent},
       {path:'navbar',component:NavbarComponent},

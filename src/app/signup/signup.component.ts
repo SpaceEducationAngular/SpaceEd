@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
-
-import axios from 'axios';
 import { Router } from '@angular/router';
+import axios from 'axios';
 
 @Injectable({ providedIn: 'root' })
 @Component({
@@ -19,7 +18,7 @@ export class SignupComponent implements OnInit {
   dob: number = 0;
   phone: number = 0;
   image_user: string = '';
-
+userInfo:any
   async signUp(e: any) {
     e.preventDefault();
     await axios
@@ -57,6 +56,10 @@ export class SignupComponent implements OnInit {
       .catch((error) => {
         console.log(error);
       });
+  }
+  getInfo(){
+    this.userInfo =localStorage.setItem("user", JSON.stringify({firstName : this.firstName , lastName : this.lastName , password :this.password , email : this.email , dob : this.dob , phone: this.phone, image_user:this.image_user, id_category: 3}));
+
   }
 
   postImage(event: any) {

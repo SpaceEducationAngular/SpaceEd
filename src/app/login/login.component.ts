@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
 import { Router } from '@angular/router';
 import axios from 'axios';
 @Injectable({ providedIn: 'root' })
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor( private router: Router) {}
 
   async getUser() {
     await axios
