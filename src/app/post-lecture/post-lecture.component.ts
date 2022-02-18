@@ -17,7 +17,7 @@ export class PostLectureComponent implements OnInit {
   description: string = '';
   image_post: string = '';
   type:any;
-  container:any=[];
+  container:any;
 
   async getPostFormData(data: any) {
     data.preventDefault();
@@ -60,10 +60,7 @@ export class PostLectureComponent implements OnInit {
     axios
     .get('http://localhost:3001/api/items/type')
     .then((result)=>{
-      (result.data.forEach((element:any) => {
-        this.container.push(element.label_type)  //map to render the types, but error mySql because no id_type !
-      }))
-      this.type=this.container
+      this.type=result.data
       console.log(this.type,"container")
     })
   }
