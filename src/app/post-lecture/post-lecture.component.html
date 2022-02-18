@@ -8,14 +8,14 @@
           <!-- Name input -->
           <div class="form-outline">
             <label class="form-label" for="form8Example1">Title:</label>
-            <input type="text" id="form8Example1" class="form-control" ngModel name="title" value="title"/>
+            <input type="text" id="form8Example1" class="form-control" [(ngModel)]="title" name="title" value="title"/>
           </div>
         </div>
         <div class="col">
           <!-- Email input -->
           <div class="form-outline">
             <label class="form-label" for="form8Example1">Description:</label>
-            <input type="email" id="form8Example2" ngModel name="description"/>
+            <input type="email" id="form8Example2" [(ngModel)]="description" name="description"/>
           </div>
         </div>
       </div>
@@ -27,14 +27,14 @@
             <label class="form-label" for="form8Example2"
               >select the categorie:</label
             >
-            <select class="form-select" aria-label="Default select example" name="id_type">
-              <option value="">select type of lecture</option>
+            <select class="form-select" aria-label="Default select example" name="id_type" [(ngModel)]="id_type">
+              <option >select type of lecture</option>
               <option class="option-type" 
-                ngModel
                 ngDefaultControl
-                *ngFor="let elem of type;let i=index"
+                *ngFor="let elem of array ;let i=index"
+                
               >
-              {{elem}}
+              {{elem.label_type}}
               </option>
             </select>
           </div>
