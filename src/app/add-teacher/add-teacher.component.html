@@ -1,17 +1,17 @@
 <div class="formbg">
   <div class="formbg-inner padding-horizontal--48">
     <span class="padding-bottom--15">Users List </span>
-    <hr>
+    <hr />
     <!-- <form id="stripe-login"> -->
     <div class="field padding-bottom--24">
       <table>
         <td><h5>First Name</h5></td>
-        
+
         <td><h5>Last Name</h5></td>
         <td><h5>Email</h5></td>
         <td><h5>Category</h5></td>
         <td><h5>Phone Number</h5></td>
-        <hr>
+        <hr />
         <tr *ngFor="let elem of users" key="elem">
           <td>{{ elem.firstName }}</td>
           <td>{{ elem.lastName }}</td>
@@ -19,29 +19,29 @@
           <td>{{ elem.label_category }}</td>
           <td>{{ elem.phone }}</td>
         </tr>
-        
       </table>
-     <hr>
+      <hr />
       <h4>change category of User</h4>
       <div class="flex-flex">
         <label>Users</label>
-        <select name="id_user" [(ngModel)]="id_user" class="form-select form-select-lg mb-3">
+        <select
+          name="id_user"
+          [(ngModel)]="id_user"
+          class="form-select form-select-lg mb-3"
+        >
           <option value="">select User</option>
-          <option
-            *ngFor="let elem of users"
-            :key="elem"
-            name="id_user"
-          >
+          <option *ngFor="let elem of users" :key="elem" name="id_user">
             {{ elem.firstName }}
           </option>
         </select>
         <label>select User</label>
-        <select name="id_category" [(ngModel)]="id_category" class="form-select form-select-lg mb-3">
+        <select
+          name="id_category"
+          [(ngModel)]="id_category"
+          class="form-select form-select-lg mb-3"
+        >
           <option value="">select Category</option>
-          <option
-            *ngFor="let elem of dataCategory"
-            key="elem"
-          >
+          <option *ngFor="let elem of dataCategory" key="elem">
             {{ elem.label_category }}
           </option>
         </select>

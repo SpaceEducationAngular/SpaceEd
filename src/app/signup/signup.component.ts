@@ -62,23 +62,21 @@ userInfo:any
 
   }
 
-  postImage(event:any){
+  postImage(event: any) {
     event.preventDefault();
-    console.log(event)
-    this.image_user= event.target.files[0]
+    console.log(event);
+    this.image_user = event.target.files[0];
     const formData = new FormData();
-    formData.append("file",this.image_user)
-    formData.append("upload_preset", "ehzqyvxt")
-    formData.append("cloud_name","brahamtahar")
+    formData.append('file', this.image_user);
+    formData.append('upload_preset', 'ehzqyvxt');
+    formData.append('cloud_name', 'brahamtahar');
     axios
-    .post("http://api.cloudinary.com/v1_1/brahamtahar/upload", formData)
-    .then((result)=>{
-        console.log(result)
-        this.image_user=result.data.url
-    })
-}
-
-
-  ngOnInit(): void {
+      .post('http://api.cloudinary.com/v1_1/brahamtahar/upload', formData)
+      .then((result) => {
+        console.log(result);
+        this.image_user = result.data.url;
+      });
   }
+
+  ngOnInit(): void {}
 }
