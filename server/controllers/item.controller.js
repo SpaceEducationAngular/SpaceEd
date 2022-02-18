@@ -109,13 +109,13 @@ var insertCategory = function (req, res) {
 var selectUser = function (req, res) {
   var password = req.body.password;
   var email = req.body.email;
-  sql = "SELECT * FROM users WHERE email = ? and password=?";
+  sql = "SELECT * FROM users WHERE email = ? ";
   db.query(sql, [email, password], (err, items, fields) => {
     if (err) {
       res.status(500).send(err);
     } else {
-      var pass = result[0]
-      if(bcrypt.compareSync(req.body.loginPassword,pass.password)){
+      var pass = items[0]
+      if(bcrypt.compareSync(req.body.password,pass.password)){
         res.status(200).send(items);
       }
       
