@@ -1,4 +1,5 @@
 var db = require("../database-mysql");
+const bcrypt = require("bcrypt")
 // select all posts for home page
 var selectAllPosts = function (req, res) {
   var sql =
@@ -108,12 +109,16 @@ var insertCategory = function (req, res) {
 var selectUser = function (req, res) {
   var password = req.body.password;
   var email = req.body.email;
-  sql = "SELECT * FROM users WHERE email = ? and password=?";
+  sql = "SELECT * FROM users WHERE email = ? ";
   db.query(sql, [email, password], (err, items, fields) => {
     if (err) {
       res.status(500).send(err);
     } else {
-      res.status(200).send(items);
+      var pass = items[0]
+      if(bcrypt.compareSync(req.body.password,pass.password)){
+        res.status(200).send(items);
+      }
+      
     }
   });
 };
@@ -156,26 +161,45 @@ var updateUserCategory = function (req, res) {
 };
 //insert data user for the signup
 var insertUser = function (req, res) {
-  var sql = "INSERT INTO users SET ?";
-  var params = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    password: req.body.password,
-    email: req.body.email,
-    dob: req.body.dob,
-    phone: req.body.phone,
-    id_category: req.body.id_category,
-    image_user: req.body.image_user,
-    active: false,
-  };
-  db.query(sql, params, (err, results) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(results);
+  db.query(`SELECT * From users where email = "${req.body.email}" `,(err,result)=>{
+    if(err){
+      res.status(500).send(err)
+    }else if(result.length === 0) {
+      if(req.body.password.length>8 && req.body.password.length<25 && req.body.password.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]/)){
+        const salt = bcrypt.genSaltSync()
+        const hashedPaswword = bcrypt.hashSync(req.body.password,salt)
+        var sql = "INSERT INTO users SET ?";
+
+        var params = {
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          password: hashedPaswword,
+          email: req.body.email,
+          dob: req.body.dob,
+          phone: req.body.phone,
+          id_category: req.body.id_category,
+          image_user: req.body.image_user,
+          active: false,
+        };
+        db.query(sql, params, (err, results) => { 
+          if (err) {
+            console.log(err);
+          } 
+          else {
+            res.send(results);
+          }
+        });
+      };
     }
-  });
-};
+  }
+  )}
+
+
+
+
+
+
+  
 // insert booking
 var insertBooking = function (req, res) {
   var sql = "INSERT INTO booking SET ?";
