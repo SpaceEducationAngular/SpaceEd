@@ -9,7 +9,7 @@
             >What categorie you want?</label
           >
 
-          <select
+          <!-- <select
             class="form-select"
             aria-label="Default select example"
             name="id_type"
@@ -25,7 +25,22 @@
             >
               {{ elem }}
             </option>
+          </select> -->
+          <select class="form-select"
+          aria-label="Default select example"
+          name="id_type"
+          input="change"
+        (change)="DetectInput($event)">
+            <option >select type of lecture</option>
+            <option class="option-type" 
+              ngDefaultControl
+              *ngFor="let elem of datatype; let i=index">
+            {{ elem.label_type }}
+            </option>
           </select>
+
+
+
         </div>
       </div>
       <div class="col">

@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { FileUploader, FileUploaderOptions, ParsedResponseHeaders } from 'ng2-file-upload';
+import axios from 'axios';
+import { Router } from '@angular/router';
 
-
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 
 @Component({
   selector: 'app-post-lecture',
@@ -13,42 +12,61 @@ import { FileUploader, FileUploaderOptions, ParsedResponseHeaders } from 'ng2-fi
 })
 export class PostLectureComponent implements OnInit {
 
-  private hasBaseDropZoneOver: boolean = false;
-//  private uploader: FileUploader;
-  constructor(private http:HttpClient) { }
+  constructor(private router: Router) { }
+  title: string = '';
+  description: string = '';
+  image_post: string = '';
+  type:any;
+  container:any=[];
 
-getPostFormData(data:any){
-  this.http.post('http://localhost:3001/api/items/posts', data).subscribe(result=>{
-    console.log(result);
-  })
-}
-
-  ngOnInit(): void {
-    const uploaderOptions: FileUploaderOptions = {
-      //url: `https://api.cloudinary.com/v1_1/${this.cloudinary.config().campgo}/upload`,
-      autoUpload: true,
-      isHTML5: true,
-      // Calculate progress independently for each uploaded file
-      removeAfterUpload: true,
-      // XHR request headers
-      headers: [
-        {
-          name: 'X-Requested-With',
-          value: 'XMLHttpRequest'
+  async getPostFormData(data: any) {
+    data.preventDefault();
+    await axios
+      .post('http://localhost:3001/api/items/posts', {
+        title: this.title,
+        description: this.description,
+        image_post: this.image_post
+      }).then((response) => {
+        if (response.data) {
+          localStorage.setItem(
+            'user',
+            JSON.stringify({
+              title: this.title,
+              description: this.description,
+              image_post: this.image_post
+            })
+          )
+          this.router.navigate(['/feed'])
         }
-      ]
-    };
-    //this.uploader = new FileUploader(uploaderOptions);
-
-    //this.uploader.onBuildItemForm = (fileItem: any, form: FormData): any => {
-      //form.append('upload_preset', this.cloudinary.config().upload_preset);
-
-     // form.append('file', fileItem);
-
-      //fileItem.withCredentials = false;
-      //return { fileItem, form };
-    };
-
+      })
   }
 
-//}
+  postImage(event: any) {
+    event.preventDefault();
+    this.image_post = event.target.files[0]
+    const formData = new FormData();
+    formData.append("file", this.image_post)
+    formData.append("upload_preset", "ehzqyvxt")
+    formData.append("cloud_name", "brahamtahar")
+    axios
+      .post("http://api.cloudinary.com/v1_1/campgo/upload", formData)
+      .then((result) => {
+        this.image_post = result.data.url
+      })
+
+
+  }
+  ngOnInit(): void {
+    axios
+    .get('http://localhost:3001/api/items/type')
+    .then((result)=>{
+      (result.data.forEach((element:any) => {
+        this.container.push(element.label_type)  //map to render the types, but error mySql because no id_type !
+      }))
+      this.type=this.container
+      console.log(this.type,"container")
+    })
+  }
+}
+
+

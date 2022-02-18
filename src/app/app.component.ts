@@ -14,16 +14,15 @@ export class AppComponent{
 
   constructor(
     private profil:ProfilUserComponent,
-    private lectures:LecturesComponent, 
+    // private lectures:LecturesComponent, 
     private login:LoginComponent,
     
     ){
 
-    this.lectures.getLectures()
+    // this.lectures.getLectures()
 
     this.login.getUser()
-
-    this.profil.getProfileData()
+  
     
     // this.login.getUserFormData().subscribe(data=>{
     //   console.log(data)

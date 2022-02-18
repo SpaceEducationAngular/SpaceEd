@@ -14,6 +14,8 @@ import { SignupComponent } from './signup/signup.component';
 import { PostLectureComponent } from './post-lecture/post-lecture.component';
 import { SearchComponent } from './search/search.component';
 import { ProfilUserComponent } from './profil-user/profil-user.component';
+import { AddTypeComponent } from './add-type/add-type.component';
+import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ProfilUserComponent } from './profil-user/profil-user.component';
     SignupComponent,
     PostLectureComponent,
     SearchComponent,
-    ProfilUserComponent
+    ProfilUserComponent,
+    AddTypeComponent,
+    AddTeacherComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,6 @@ import { ProfilUserComponent } from './profil-user/profil-user.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
   
 }
-
