@@ -1,1 +1,66 @@
-<p>post-lecture works!</p>
+
+  <div class="formbg">
+    <div>
+    <!-- <div class="formbg-inner padding-horizontal--48" #PostForm="ngForm" (ngSubmit)="getPostFormData(PostForm.value)"> -->
+      <h3>Post a lecture:</h3>
+      <div class="row">
+        <div class="col">
+          <!-- Name input -->
+          <div class="form-outline">
+            <label class="form-label" for="form8Example1">Title:</label>
+            <input type="text" id="form8Example1" class="form-control" ngModel name="title" :value="title"/>
+          </div>
+        </div>
+        <div class="col">
+          <!-- Email input -->
+          <div class="form-outline">
+            <label class="form-label" for="form8Example2">Description:</label>
+            <input type="email" id="form8Example2" ngModel name="description"/>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <div class="col">
+          <!-- Name input -->
+          <div class="form-outline">
+            <label class="form-label" for="form8Example2"
+              >select the categorie:</label
+            >
+
+            <select class="form-select" aria-label="Default select example" name="id_type">
+              <option value="">select type of lecture</option>
+
+              <option ngModel
+                *ngFor="elem in this.datatype"
+                :key="elem"
+                :value="elem.id_type"
+              >
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <!-- Name input -->
+          <div class="form-outline">
+            <label class="form-label" for="form8Example4">Image:</label>
+            <form action="" method="post" enctype="multipart/form-data">
+              <!-- <input type="file" NgModel ng2FileSelect [uploader]="uploader"> -->
+          </form>
+          </div>
+        </div>
+        <div class="col">
+          <!-- Email input -->
+          <div class="form-outline">
+                    <label class="form-label" for="form8Example4">Click to submit:</label>
+    
+                <!-- <button type="submit" class="btn btn-primary btn-block mb-4" (click)="upload()" class="btn" >Submit</button> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
