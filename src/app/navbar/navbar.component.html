@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-lg p-3 mb-5">
+  <a
+    class="title-nav nav-item nav-link"
+    routerLink="/"
+    routerLinkActive="active"
+    >Space<svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 0 24 24"
+      width="24px"
+      fill="white"
+    >
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path
+        d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"
+      /></svg
+    >Ed</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+      <a class="nav-item nav-link active" routerLink="/lectures" *ngIf="id_category!==0 && id_category!==3" href="#">Lectures</a>
+      <a class="nav-item nav-link active" routerLink="/booking" *ngIf="id_category!==0" href="#">Booking</a>
+      <a class="nav-item nav-link active" routerLink="/search" href="#">Search</a>
+      <a class="login-btn nav-item nav-link active" routerLink="/login" *ngIf="id_category===0">Log-in</a>
+      <!-- <a class="signup-btn nav-item nav-link active" *ngIf='id_category===0' routerLink="/signup" >Signup</a> -->
+      <a class="signup-btn nav-item nav-link active" routerLink="/profile-user" *ngIf="id_category!==0" (click)="changeKey()" >Profile</a>
+      <a class="signup-btn nav-item nav-link active" routerLink="/post-lecture" *ngIf="id_category!==0 && id_category!==3" >Post New Lecture</a>
+      <a class="nav-item nav-link active" routerLink="/add-teacher" *ngIf="id_category===1" href="#">Add teacher</a>
+      <a class="nav-item nav-link active" routerLink="/add-type" *ngIf="id_category===1" href="#">Add type</a>
+      
+      <a class="signup-btn nav-item nav-link active" (click)="logout()" routerLink="/login" *ngIf="id_category!==0">Log-Out</a>
+
+    </div>
+  </div>
+</nav>

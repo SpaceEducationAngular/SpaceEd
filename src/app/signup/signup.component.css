@@ -1,0 +1,11 @@
+.photo-sign{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    height: 80%;
+    width: 100%;
+}
+
