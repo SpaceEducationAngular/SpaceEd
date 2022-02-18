@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import  axios  from 'axios';
 
-
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -16,7 +15,7 @@ export class SearchComponent implements OnInit {
   id_type:any;
   array:any;
   posts:any;
-  allposts:any;
+  allposts:any=[];
   index:any;
   value:any;
   profil:any;
@@ -28,10 +27,10 @@ export class SearchComponent implements OnInit {
     }
   
   search() {
-     
     var newArray = []
     this.posts = []
     for (var i = 0; i < this.allposts.length; i++) {
+      
       if (this.allposts[i].firstName.includes(this.value) || this.allposts[i].label_type.includes(this.value) || this.allposts[i].lastName.includes(this.value)) {
         console.log(this.allposts[i]) 
         newArray.push(this.allposts[i])

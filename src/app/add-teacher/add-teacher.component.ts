@@ -15,11 +15,20 @@ id_user: any
 user: any
   constructor() { }
   add() {
+    if(this.id_category==="Admin"){
+      this.id_category = 1
+    }if(this.id_category==="Teacher"){
+      this.id_category = 2
+    }if(this.id_category==="Student"){
+      this.id_category = 3
+    }
+    console.log(this.id_category,"ahhaha")
     var option = {
       id_category: this.id_category,
       id_user: this.id_user,
     };
     console.log(option);
+    console.log(this.id_user)
     axios
       .put(`http://localhost:3001/api/items/user/`+this.id_user, option)
       .then((response) => {
