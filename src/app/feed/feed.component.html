@@ -22,14 +22,14 @@
     </div>
   </div>
 </div>
-<hr>
+<hr />
 <br />
 
-<div class="card-deck" >
+<div class="card-deck">
   <div
     class="container-big card shadow-lg p-3 mb-5 bg-white rounded"
     *ngFor="let elem of posts; let i = index"
-    (value)="i"
+    (value)="(i)"
   >
     <img
       class="card-img-top"
@@ -45,15 +45,15 @@
       <h5 class="card-title">{{ elem.title }}</h5>
       <p class="card-text">{{ elem.description }}</p>
       <div class="book-btn-container text-center my-4">
-        <a href="/booking" (click)="booking(user.id_user,elem.id_post)"
-        
-        class="btn btn-warning">Booking</a>
-      
-    </div>
-      
+        <a
+          href="/booking"
+          (click)="booking(user.id_user, elem.id_post)"
+          class="btn btn-warning"
+          >Booking</a
+        >
+      </div>
     </div>
   </div>
-  
 </div>
 
 <br />
@@ -62,7 +62,7 @@
   <div class="educ-text">
     <h2>Join our space, to be part of a new digital learning journey</h2>
   </div>
-  
+
   <div class="footer-container">
     <div class="row">
       <div class="col-md-12 py-5">
@@ -142,7 +142,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="footer-copyright text-center py-3">

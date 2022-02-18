@@ -5,17 +5,17 @@ import { Injectable } from '@angular/core';
 @Component({
   selector: 'app-add-type',
   templateUrl: './add-type.component.html',
-  styleUrls: ['./add-type.component.css']
+  styleUrls: ['./add-type.component.css'],
 })
 export class AddTypeComponent implements OnInit {
-  title: any
-  description: any
-  datatype:any
-  user:any
-  id_type: any
-  label_type:any
-  image_type : any
-  constructor() { }
+  title: any;
+  description: any;
+  datatype: any;
+  user: any;
+  id_type: any;
+  label_type: any;
+  image_type: any;
+  constructor() {}
   add() {
     var option = {
       label_type: this.label_type,
@@ -23,7 +23,7 @@ export class AddTypeComponent implements OnInit {
     };
     console.log(option);
     axios
-      .post("http://localhost:3001/api/items/type", option)
+      .post('http://localhost:3001/api/items/type', option)
       .then((response) => {
         console.log(response);
         location.reload();
@@ -33,11 +33,11 @@ export class AddTypeComponent implements OnInit {
       });
   }
   ngOnInit(): void {
-    axios.get("http://localhost:3001/api/items/type").then((response) => {
+    axios.get('http://localhost:3001/api/items/type').then((response) => {
       this.datatype = response.data;
       console.log(this.datatype);
       // localStorage.setItem("type", JSON.stringify(this.type));
     });
-    this.user= JSON.parse(localStorage.getItem("user")!)
+    this.user = JSON.parse(localStorage.getItem('user')!);
   }
 }
