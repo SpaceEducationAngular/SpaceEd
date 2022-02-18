@@ -1,0 +1,38 @@
+.formbg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.formbg-inner{
+    padding:6%;
+    border: 1px solid;
+    border-radius: 25px;
+}
+
+button{
+    border: none;
+    text-decoration: none;
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+select{
+    font-size: large;
+}
+
+h5{
+    font-size: large;
+}
+
+td{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+
+button:hover{
+    color: white;
+    background-color: blue;
+}

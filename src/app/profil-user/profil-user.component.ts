@@ -46,7 +46,7 @@ key:any
     //   })
       
     this.key = localStorage.getItem("key");
-    if (this.key == 1) {
+    if (JSON.parse(localStorage.getItem("profil")!)) {
       this.user = JSON.parse(localStorage.getItem("profil")!)[0];
       console.log(this.user,"heyyyyyyy")
       this.firstName=this.user.firstName
@@ -57,7 +57,7 @@ key:any
         this.dob=this.user.dob
         this.image_user=this.user.image_user
         this.users = [this.user]
-    } else {
+    } else{
       this.user = JSON.parse(localStorage.getItem("user")!);
       var id = this.user.id_user
       axios
