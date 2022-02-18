@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
-import { Injectable } from '@angular/core';
-
-@Injectable({ providedIn: 'root' })
 
 @Component({
   selector: 'app-booking',
@@ -10,12 +7,14 @@ import { Injectable } from '@angular/core';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
-  id_user: any
-  id_category: any
+  booked: any;
+  dataCategory: any;
   users: any
-  dataCategory: any
-  user:any
-  booked:any
+  id_user: string ='';
+  id_category: string= '';
+  user:any //it must be changed to the line commented bellow
+  // user: JSON.parse(localStorage.getItem("user")),
+
   constructor() { }
   add() {
     var option = {
@@ -36,9 +35,14 @@ export class BookingComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-    this.user= JSON.parse(localStorage.getItem("user")!)
+  async change(event: any){
+    [event.target.name] = event.target.value
+    console.log(event.target.name);
+  }
 
+  
+
+  ngOnInit(): void {
     axios.get(`http://localhost:3001/api/items/booking/${this.user.id_user}`).then((response) => {
       this.booked = response.data;
       console.log(this.booked);
@@ -49,5 +53,4 @@ export class BookingComponent implements OnInit {
       console.log(this.dataCategory);
     });
   }
-
 }

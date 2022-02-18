@@ -27,7 +27,6 @@
         <label>Users</label>
         <select name="id_user" ng-value="id_user" [(ngModel)]="id_user">
           <option value="">select User</option>
-
           <option
             *ngFor="let elem of users"
             :key="elem"
@@ -39,7 +38,6 @@
         <label>select User</label>
         <select name="id_category" [(ngModel)]="id_category" >
           <option value="">select Category</option>
-
           <option
             *ngFor="let elem of dataCategory"
             :key="elem"

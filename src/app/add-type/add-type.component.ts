@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { Injectable } from '@angular/core';
-
 @Injectable({ providedIn: 'root' })
-
 @Component({
   selector: 'app-add-type',
   templateUrl: './add-type.component.html',
@@ -42,5 +40,4 @@ export class AddTypeComponent implements OnInit {
     });
     this.user= JSON.parse(localStorage.getItem("user")!)
   }
-
 }
