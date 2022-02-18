@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import axios from 'axios'
+import axios from 'axios';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +14,13 @@ import axios from 'axios'
   templateUrl: './lectures.component.html',
   styleUrls: ['./lectures.component.css']
 })
-export class LecturesComponent {
-  posts:any
-  id_user: any
-  id_category: any
-  users:any
-  dataCategory:any
-  userInfo:any
 
+export class LecturesComponent implements OnInit {
+  posts:any;
+userInfo :any
+dataCategory : any
+id_user:any
+id_category:any
   constructor(private http: HttpClient) { }
   async getLectures(){
     this.http.get('http://localhost:3001/api/items/homePosts').subscribe((result)=>{
@@ -64,5 +64,14 @@ export class LecturesComponent {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  ngOnInit(): void{
+    // axios
+    // .get('http://localhost:3001/api/items/homePosts')
+    // .then(result=>{
+    //   console.log(result)
+    //   this.posts = result
+    // })
   }
 }

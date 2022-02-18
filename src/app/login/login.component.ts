@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import axios from 'axios';
 @Injectable({providedIn: 'root'})
 @Component({
   selector: 'app-login',
@@ -9,18 +11,43 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
   user:any;
-  constructor(private http:HttpClient) { }
-  getUserFormData(data:any){
-    this.http.post('http://localhost:3001/api/items/userlogin',data).subscribe(result=>{
-      console.log(result)
-    })
-  }
-
-  getUser(){
-    this.http.get('http://localhost:3001/api/items/userall');
-  }
+email : string=""
+password :string=""
+  
+  constructor(private http:HttpClient ,private router: Router) { }
 
   
+
+  async getUser(){
+    await axios.get('http://localhost:3001/api/items/userall').then(result=>{
+      console.log(result)
+    });
+  }
+
+ 
+  
+  add() {
+    var option = {
+      email: this.email,
+      password: this.password,
+    };
+    console.log(option);
+    axios
+      .post("http://localhost:3001/api/items/userlogin", option)
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("user", JSON.stringify(response.data[0]));
+        
+        // location.reload();
+        if(response.data){
+          this.router.navigate(['/']);
+          setTimeout(()=>location.reload(),1)
+        }else{
+          this.router.navigate(['/login']);
+        }
+      })
+      
+  }
 
   ngOnInit(): void { }
 }
